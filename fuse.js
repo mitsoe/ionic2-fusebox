@@ -1,3 +1,5 @@
+//Not used, check gulpfile.js for configuration
+
 const fsbx = require('fuse-box');
 
 const fuseBox = fsbx.FuseBox.init({
