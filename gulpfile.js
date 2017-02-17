@@ -32,14 +32,6 @@ gulp.task('index', () => {
         .pipe(gulp.dest(DIST));
 });
 
-gulp.task('ionic-css', () => {
-    return gulp.src('node_modules/ionic-angular/**/*.css')
-        .pipe(rename({
-            basename: 'main',
-        }))
-        .pipe(gulp.dest(DIST));
-});
-
 gulp.task('ionic-fonts', () => {
     return gulp.src('node_modules/ionic-angular/fonts/*')
         .pipe(rename({
@@ -48,12 +40,8 @@ gulp.task('ionic-fonts', () => {
         .pipe(gulp.dest(DIST));
 });
 
-gulp.task('assets', () => {
-    return gulp.src('assets/**/*').pipe(gulp.dest(DIST));
-});
-
-gulp.task('watch', ['fusebox', 'index', 'ionic-css', 'ionic-fonts', 'assets'], () => {
-    gulp.watch('src/**/*.**', ['fusebox', 'index', 'assets']);
+gulp.task('watch', ['fusebox', 'index', 'ionic-fonts'], () => {
+    gulp.watch('src/**/*.**', ['fusebox', 'index']);
 });
 
 gulp.task('default', ['watch'], () => {

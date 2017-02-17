@@ -1,14 +1,15 @@
 //Not used, check gulpfile.js for configuration
-
 const fsbx = require('fuse-box');
+
+const DIST = 'www';
 
 const fuseBox = fsbx.FuseBox.init({
     homeDir: 'src/',
     sourceMap: {
         bundleReference: 'app.js.map',
-        outFile: './dist/app.js.map',
+        outFile: `./${DIST}/bundle/app.js.map`,
     },
-    outFile: './dist/app.js',
+    outFile: `./${DIST}/bundle/app.js`,
     plugins: [
         [
             fsbx.SassPlugin({ outputStyle: 'compressed' }),
@@ -16,13 +17,11 @@ const fuseBox = fsbx.FuseBox.init({
                 inline: true
             }), fsbx.CSSPlugin()
         ],
-        fsbx.TypeScriptHelpers(),
         fsbx.JSONPlugin(),
-        fsbx.HTMLPlugin({ useDefault: false }),
-        fsbx.ImageBase64Plugin()
+        fsbx.HTMLPlugin({ useDefault: false })
     ]
 });
 
-fuseBox.devServer('>app/main.ts', {
+fuseBox.devServer('>main.ts', {
     port: 8100
 });
