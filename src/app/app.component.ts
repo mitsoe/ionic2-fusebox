@@ -5,11 +5,11 @@ import { HomePage } from '../pages/home/home';
 
 
 @Component({
-    // templateUrl: './app.html'
     template: require('./app.html')
 })
 export class MyApp {
     rootPage = HomePage;
+
 
     constructor() {
         let testModule = {
