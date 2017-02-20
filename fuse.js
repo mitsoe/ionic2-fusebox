@@ -22,6 +22,6 @@ const fuseBox = fsbx.FuseBox.init({
     ]
 });
 
-fuseBox.devServer('>main.ts', {
+fuseBox.devServer('>app/main.ts', {
     port: 8100
 });
