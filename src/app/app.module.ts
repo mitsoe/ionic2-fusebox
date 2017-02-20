@@ -1,6 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import "ionic-angular/css/ionic.css";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
