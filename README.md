@@ -8,7 +8,7 @@ This is an ionic2 app that uses fusebox. it also loads in an external module as 
 
 #### Setup & run 
 * `npm install`
-* `Because of an issue with index.html and icons we first need to run the gulp task : run gulp in cmd`
+* `Because of an issue with icons we first need to run the gulp task : run gulp in cmd`
 * `npm start`
 
 #### External module
