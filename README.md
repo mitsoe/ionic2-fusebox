@@ -1,3 +1,7 @@
+### Known issues
+Issue with ng2-translate and ionic-storage
+
+
 ### Fuse-box + Ionic2
 This is an ionic2 app that uses fusebox. it also loads in an external module as a string.
 
