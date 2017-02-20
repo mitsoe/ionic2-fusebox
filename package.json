@@ -4,18 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "rimraf www && cpx ./src/index.html ./www/",
     "start": "node fuse"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fuse-box/angular2-example.git"
+    "url": "git+https://github.com/mitsoe/ionic2-fusebox"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fuse-box/angular2-example/issues"
+    "url": "https://github.com/mitsoe/ionic2-fusebox"
   },
-  "homepage": "https://github.com/fuse-box/angular2-example#readme",
+  "homepage": "https://github.com/mitsoe/ionic2-fusebox#readme",
   "devDependencies": {
     "@types/lodash": "^4.14.44",
     "@types/node": "^7.0.5",
@@ -30,6 +31,8 @@
   },
   "dependencies": {
     "@angular/common": "2.2.1",
+    "cpx": "^1.5.0",
+    "rimraf": "^2.5.4",
     "@angular/compiler": "2.2.1",
     "@angular/compiler-cli": "2.2.1",
     "@angular/core": "2.2.1",
