@@ -12,31 +12,23 @@ export class MyApp {
 
 
     constructor() {
-        let testModule = {
-            modules: [`module.exports = {
-            sayHello: function () {
-                return "HELLO from module 1";
-            }
-        };`, `module.exports = {
-            sayHello: function () {
-                return "Bonjour from module 2";
-            }
-        };`
-            ]
-        }
+        let bundle = `(function(FuseBox){FuseBox.$fuse$=FuseBox;
+                        FuseBox.pkg("mySuperLib", {}, function(___scope___){
+                        ___scope___.file("app/test.js", function(exports, require, module, __filename, __dirname){ 
 
-        testModule.modules.forEach((myModule, i) => {
-            FuseBox.dynamic(i + "/module.js", myModule)
-            FuseBox.import("./" + i + "/module")
-            let thisModule = FuseBox.import("./" + i + "/module")
-            console.log('**', thisModule.sayHello())
-        })
-        // public platform: Platform
-        // this.platform.ready().then(() => {
-        //   // Okay, so the platform is ready and our plugins are available.
-        //   // Here you can do any higher level native things you might need.
-        //   StatusBar.styleDefault();
-        //   Splashscreen.hide();
-        // });
+                        "use strict";
+                        module.exports = { foo: 'bar' };
+                        //# sourceMappingURL=test.js.map
+                        });
+                        });
+                        FuseBox.defaultPackageName = "mySuperLib";
+                        })
+                        (FuseBox)`
+        let bundleSimple = `module.exports = {foo : 'bar'}`
+        FuseBox.dynamic("foo/bar.js", bundleSimple)
+        FuseBox.dynamic("foo/bar2.js", bundle)
+        let test = require("~/foo/bar.js")
+        let test2 = require("~/foo/bar2.js")
+        debugger;
     }
 }
