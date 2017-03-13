@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "rimraf www && cpx ./src/index.html ./www/",
+    "prestart": "rimraf www && node fuse-package.js && cpx ./src/index.html ./www/ && cpx ./build/helloModule.js ./www/",
     "start": "node fuse"
   },
   "repository": {

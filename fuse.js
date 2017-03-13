@@ -3,6 +3,7 @@ const fsbx = require('fuse-box');
 const fuseBox = fsbx.FuseBox.init({
   cache: false,
   homeDir: 'src/',
+  pkg: "mySuperLib",
   sourceMap: {
     bundleReference: 'app.js.map',
     outFile: './www/app.js.map',
